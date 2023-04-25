@@ -53,6 +53,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://e-cart-backend-m6tb.onrender.com"
+  }
+
 }
