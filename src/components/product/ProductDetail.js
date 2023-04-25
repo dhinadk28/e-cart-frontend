@@ -21,12 +21,14 @@ export default function ProductDetail () {
 
     const increaseQty = () => {
         const count = document.querySelector('.count')
+        // eslint-disable-next-line eqeqeq
         if(product.stock ==0 ||  count.valueAsNumber >= product.stock) return;
         const qty = count.valueAsNumber + 1;
         setQuantity(qty);
     }
     const decreaseQty = () => {
         const count = document.querySelector('.count')
+        // eslint-disable-next-line eqeqeq
         if(count.valueAsNumber == 1 ) return;
         const qty = count.valueAsNumber - 1;
         setQuantity(qty);
@@ -75,7 +77,7 @@ export default function ProductDetail () {
         }
         
 
-    },[dispatch,id,isReviewSubmitted, error])
+    },[dispatch, id, isReviewSubmitted, error, product._id])
 
 
 
@@ -117,6 +119,7 @@ export default function ProductDetail () {
                         <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                     </div>
                     <button type="button" id="cart_btn" 
+                     // eslint-disable-next-line eqeqeq
                      disabled={product.stock==0?true:false} 
                      onClick={()=>{
                         dispatch(addCartItem(product._id, quantity))

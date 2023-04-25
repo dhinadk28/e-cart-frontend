@@ -93,7 +93,7 @@ export default function ProductList() {
         }
 
         dispatch(getAdminProducts)
-    },[dispatch, error, isProductDeleted])
+    },[dispatch, error, isProductDeleted, productError])
     const exportPDF = () => {
         // Create a new jsPDF instance
         const doc = new jsPDF();

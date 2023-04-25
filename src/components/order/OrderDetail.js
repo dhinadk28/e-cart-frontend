@@ -12,7 +12,7 @@ export default function OrderDetail () {
 
     useEffect(() => {
         dispatch(orderDetailAction(id))
-    },[id])
+    },[dispatch, id])
 
     return (
         <Fragment>

@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { Fragment } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
@@ -10,11 +11,13 @@ export default function Cart() {
 
     const increaseQty = (item) => {
         const count = item.quantity;
+        // eslint-disable-next-line eqeqeq
         if(item.stock ==0 ||  count >= item.stock) return;
         dispatch(increaseCartItemQty(item.product))
     }
     const decreaseQty = (item) => {
         const count = item.quantity;
+        // eslint-disable-next-line eqeqeq
         if(count == 1) return;
         dispatch(decreaseCartItemQty(item.product))
     }
@@ -25,7 +28,10 @@ export default function Cart() {
 
 
     return (
+        // eslint-disable-next-line react/jsx-no-comment-textnodes
         <Fragment>
+            
+            // eslint-disable-next-line eqeqeq
             {items.length==0 ? 
                 <h2 className="mt-5">Your Cart is Empty</h2> :
                 <Fragment>

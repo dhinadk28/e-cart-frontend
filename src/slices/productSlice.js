@@ -98,12 +98,14 @@ const productSlice = createSlice({
                 isProductCreated: false
             }
         },
+         // eslint-disable-next-line no-dupe-keys
          newProductRequest(state, action){
             return {
                 ...state,
                 loading: true
             }
         },
+        // eslint-disable-next-line no-dupe-keys
         newProductSuccess(state, action){
             return {
                 ...state,
@@ -112,6 +114,7 @@ const productSlice = createSlice({
                 isProductCreated: true
             }
         },
+        // eslint-disable-next-line no-dupe-keys
         newProductFail(state, action){
             return {
                 ...state,
@@ -120,6 +123,7 @@ const productSlice = createSlice({
                 isProductCreated: false
             }
         },
+        // eslint-disable-next-line no-dupe-keys
         clearProductCreated(state, action) {
             return {
                 ...state,

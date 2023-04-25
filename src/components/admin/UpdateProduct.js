@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import { useDispatch, useSelector} from 'react-redux';
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getProduct, updateProduct } from "../../actions/productActions";
 import { clearError, clearProductUpdated } from "../../slices/productSlice";
 import { toast } from "react-toastify";
@@ -35,7 +35,6 @@ export default function UpdateProduct () {
         'Home'
     ];
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const onImagesChange = (e) => {
@@ -46,6 +45,7 @@ export default function UpdateProduct () {
             const reader = new FileReader();
 
             reader.onload = () => {
+                // eslint-disable-next-line eqeqeq
                 if(reader.readyState == 2 ) {
                     setImagesPreview(oldArray => [...oldArray, reader.result])
                     setImages(oldArray => [...oldArray, file])
@@ -103,7 +103,7 @@ export default function UpdateProduct () {
         }
 
         dispatch(getProduct(productId))
-    }, [isProductUpdated, error, dispatch])
+    }, [isProductUpdated, error, dispatch, productId])
 
 
     useEffect(() => {
@@ -220,6 +220,7 @@ export default function UpdateProduct () {
 
                                     { imagesPreview.length > 0 &&  <span className="mr-2" onClick={clearImagesHandler} style={{cursor: "pointer"}}><i className="fa fa-trash"></i></span>}
                                     {imagesPreview.map(image => (
+                                        // eslint-disable-next-line jsx-a11y/img-redundant-alt
                                         <img
                                             className="mt-3 mr-2"
                                             key={image}

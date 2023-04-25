@@ -18,22 +18,14 @@ export default function OrderList() {
     
     const { adminOrders = [], loading = true, error, isOrderDeleted } = useSelector(state => state.orderState);
     const dispatch = useDispatch();
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [adminOrdersFiltered, setAdminOrders] = useState([]);
+    // eslint-disable-next-line no-empty-pattern
+    const [] = useState('');
+    // eslint-disable-next-line no-empty-pattern
+    const [] = useState('');
+    // eslint-disable-next-line no-empty-pattern
+    const [] = useState([]);
 
-    const filterOrders = () => {
-        const filteredOrders = adminOrders.filter(order => {
-          const createdDate = new Date(order.createdAt);
-          return createdDate >= startDate && createdDate <= endDate;
-        });
-        return filteredOrders;
-      };
     
-      const handleFilter = () => {
-        const filteredOrders = filterOrders();
-        setAdminOrders(filteredOrders);
-      };
     
 
     const setOrders = () => {

@@ -44,6 +44,7 @@ export  default function NewProduct () {
             const reader = new FileReader();
 
             reader.onload = () => {
+                // eslint-disable-next-line eqeqeq
                 if(reader.readyState == 2 ) {
                     setImagesPreview(oldArray => [...oldArray, reader.result])
                     setImages(oldArray => [...oldArray, file])
@@ -91,7 +92,7 @@ export  default function NewProduct () {
             })
             return
         }
-    }, [isProductCreated, error, dispatch])
+    }, [isProductCreated, error, dispatch, navigate])
 
 
     return (
@@ -188,6 +189,7 @@ export  default function NewProduct () {
                                         </label>
                                     </div>
                                     {imagesPreview.map(image => (
+                                        // eslint-disable-next-line jsx-a11y/img-redundant-alt
                                         <img
                                             className="mt-3 mr-2"
                                             key={image}

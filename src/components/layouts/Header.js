@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Search from './Search';
 import {useDispatch, useSelector} from 'react-redux';
+// eslint-disable-next-line no-unused-vars
 import {DropdownButton, Dropdown, Image} from 'react-bootstrap';
 import { logout } from '../../actions/userActions';
 
