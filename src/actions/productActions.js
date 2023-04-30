@@ -119,7 +119,7 @@ export const getReviews =  id => async (dispatch) => {
 
     try {  
         dispatch(reviewsRequest()) 
-        const { data }  =  await axios.get(`https://e-cart-backend-m6tb.onrender.com/api/v1/admin/reviews`,{params: {id}});
+        const { data }  =  await axios.get(``,{params: {id}});
         dispatch(reviewsSuccess(data))
     } catch (error) {
         //handle error
@@ -132,7 +132,7 @@ export const deleteReview =  (productId, id) => async (dispatch) => {
 
     try {  
         dispatch(deleteReviewRequest()) 
-        await axios.delete(`https://e-cart-backend-m6tb.onrender.com/api/v1/admin/review`,{params: {productId, id}});
+        await axios.delete(``,{params: {productId, id}});
         dispatch(deleteReviewSuccess())
     } catch (error) {
         //handle error
